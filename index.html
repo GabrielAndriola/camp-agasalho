@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <title>Campanha do Agasalho</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shorcut icon" href="media/icone.png" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <div class="btn">
+      <span class="fas fa-bars"></span>
+    </div>
+    <nav class="sidebar">
+      <div class="text">
+        Menu
+      </div>
+      <ul>
+        <li class="active"><a href="index.html">Home</a></li>
+        <li>
+          <a href="paginas/_itens.html" class="feat-btn">Itens</a>
+        </li>
+        <li>
+          <a href="#" class="serv-btn"
+            >Doações
+            <span class="fas fa-caret-down second"></span>
+          </a>
+          <ul class="serv-show">
+            <li><a href="paginas/_doe.html">Doe</a></li>
+            <li><a href="paginas/_receba.html">Receba</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+        <img id="home" src="media/back.png" alt="">
+
+        <div class="corpo">
+            <div class="col1">
+                <br><br>
+                <h1>Sobre Nós</h1>
+                <p>
+                  Fundada em 2020, nós somos uma campanha para recolhimento
+                  e doação de agasalhos e roupas de inverno lembre-se que o que está
+                  parado no seu guarda-roupa pode salvar um vida em uma noite fria. Doe
+                  e receba através de nosso portal.
+                </p>
+                <img src="media/imagem1.png" id="imagem1" />
+                <br> <br>
+                <h1>Itens que precisamos</h1>
+                <ol>
+                  <li>Casacos</li>
+                  <li>Cobertores</li>
+                  <li>Meias</li>
+                  <li>Calças</li>
+                </ol>
+            </div>
+            <div class="col2">
+                <br><br>
+                <h1>Vídeo - Campanha do Agasalho</h1>
+                <br />
+                <video id="video" controls="controls">
+                <source src="media/video.mp4" type="video/mp4" />
+                </video>
+                <p id="legenda">
+                Vídeo do estado do Rio Grande do Sul sobre a campanha do agasalho
+                </p>
+                <br><br><br><br><br>
+                <table>
+                    <caption>
+                      Importância dos itens
+                    </caption>
+                    <tr>
+                      <td>Casaco</td>
+                      <td>Muito Importante</td>
+                    </tr>
+                    <tr>
+                      <td>Cobertor</td>
+                      <td>Importante</td>
+                    </tr>
+                    <tr>
+                      <td>Calça</td>
+                      <td>Médio</td>
+                    </tr>
+                  </table>
+            </div>
+        </div>
+        <div>
+            <p id="nome">
+                Trabalho final - Introdução a Web - Gabriel Andriola da Silveira &copy
+              </p>
+        </div>
+    <script>
+      $(".btn").click(function () {
+        $(this).toggleClass("click");
+        $(".sidebar").toggleClass("show");
+      });
+      $(".feat-btn").click(function () {
+        $("nav ul .feat-show").toggleClass("show");
+        $("nav ul .first").toggleClass("rotate");
+      });
+      $(".serv-btn").click(function () {
+        $("nav ul .serv-show").toggleClass("show1");
+        $("nav ul .second").toggleClass("rotate");
+      });
+      $("nav ul li").click(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+      });
+    </script>
+  </body>
+</html>

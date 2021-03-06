@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Doe</title>
+    <meta charset="utf-8" />
+    <link rel="shorcut icon" href="../media/icone.png" />
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script type="text/javascript">
+
+      function validaForm(frm) {
+          if(frm.nome1.value == "" || frm.nome1.value == null || frm.nome1.value.lenght < 3) {
+              //É mostrado um alerta, caso o campo esteja vazio.
+              alert("Por favor, indique o seu nome.");
+          }
+          //o campo e-mail precisa de conter: "@", "." e não pode estar vazio
+          if(frm.email.value.indexOf("@") == -1 ||
+            frm.email.valueOf.indexOf(".") == -1 ||
+            frm.email.value == "" ||
+            frm.email.value == null) {
+              alert("Por favor, indique um e-mail válido.");
+              frm.email.focus();
+              return false;
+          }
+          if(frm.telefone.value == "" || frm.telefone.value == null) {
+              alert("Por favor, Insira seu Telefone.");
+              frm.telefone.focus();
+              return false;
+          }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="btn">
+      <span class="fas fa-bars"></span>
+    </div>
+    <nav class="sidebar">
+      <div class="text">
+        Menu
+      </div>
+      <ul>
+        <li class="active"><a href="../index.html">Home</a></li>
+        <li>
+          <a href="../paginas/_itens.html" class="feat-btn">Itens</a>
+        </li>
+        <li>
+          <a href="#" class="serv-btn"
+            >Doações
+            <span class="fas fa-caret-down second"></span>
+          </a>
+          <ul class="serv-show">
+            <li><a href="../paginas/_doe.html">Doe</a></li>
+            <li><a href="">Receba</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <h1 id="item">Receba uma doação</h1>
+    <h2 id="sub">Preencha o formulário abaixo e entraremos em contato</h2>
+    
+      <div id="form">
+        <form name="frmTeste" method="post" action="#" onsubmit="return validaForm(this);">
+          <p>Formulário para Recebimento de doações</p>
+          <p>Nome: <input type="text" name="nome" id="nome1" /></p>
+          <p>Email: <input type="text" name="email" id="email" /></p>
+          <p>Telefone: <input type="text" name="telefone" id="telefone" /></p>
+          <p>Sexo:
+          <label><input type="radio" name="sexo" value="M" id="masc" /> Masculino</label>
+          <label><input type="radio" name="sexo" value="F" id="masc" /> Feminino</label>
+          </p>
+          <p>Que item você precisa?:
+            <select name="Item">
+              <option value="">Selecione o item</option>
+              <option value="Casaco">Casaco</option>
+              <option value="Calça">Calça</option>
+              <option value="Camisa">Camisa</option>
+              <option value="Meias">Meias</option>
+            </select>
+          </p><label><input type="submit" name="sbt" value="Enviar" /></label></p>
+        </form>
+     </div>
+
+    <div>
+      <p id="nome">
+          Trabalho final - Introdução a Web - Gabriel Andriola da Silveira &copy
+        </p>
+   </div>
+    <script>
+      $(".btn").click(function () {
+        $(this).toggleClass("click");
+        $(".sidebar").toggleClass("show");
+      });
+      $(".feat-btn").click(function () {
+        $("nav ul .feat-show").toggleClass("show");
+        $("nav ul .first").toggleClass("rotate");
+      });
+      $(".serv-btn").click(function () {
+        $("nav ul .serv-show").toggleClass("show1");
+        $("nav ul .second").toggleClass("rotate");
+      });
+      $("nav ul li").click(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+      });
+    </script>
+  </body>
+</html>
